@@ -1,0 +1,26 @@
+{
+  "navbar": {
+    "home": "الرئيسية",
+    "search": "بحث",
+    "orders": "الطلبات"
+  },
+  "login": {
+    "heroTitleLine1": "وجبات طازة،",
+    "heroTitleLine2": "توصيل سريع.",
+    "heroSubtitle": "استمتع بأفضل الأطباق المحلية توصل لباب بيتك مع QuickServe.",
+    "welcomeBack": "أهلاً بيك تاني",
+    "subtitle": "من فضلك ادخل بياناتك عشان تسجل دخول.",
+    "emailLabel": "البريد الإلكتروني",
+    "passwordLabel": "كلمة المرور",
+    "signIn": "تسجيل الدخول",
+    "signingIn": "جاري تسجيل الدخول...",
+    "orContinueWith": "أو تابع باستخدام",
+    "continueWithGoogle": "المتابعة بحساب جوجل",
+    "continueWithFacebook": "المتابعة بحساب فيسبوك",
+    "dontHaveAccount": "معندكش حساب؟",
+    "signUp": "إنشاء حساب",
+    "termsAgree": "بتسجيل الدخول، إنت موافق على",
+    "termsOfService": "شروط الاستخدام",
+    "privacyPolicy": "سياسة الخصوصية"
+  }
+}

@@ -1,0 +1,9 @@
+.sort-dropdown {
+  padding: 6px 10px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font-size: 13px;
+  color: var(--color-accent);
+  background-color: var(--color-surface);
+  cursor: pointer;
+}

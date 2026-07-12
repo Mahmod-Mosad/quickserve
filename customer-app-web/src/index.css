@@ -1,0 +1,42 @@
+/* الألوان الافتراضية (Light Mode) — دي بتتطبق تلقائي لو مفيش data-theme محدد */
+:root {
+  --color-bg: #f7f5f2;
+  --color-surface: #ffffff;
+  --color-text-primary: #1f2937;
+  --color-text-secondary: #6b7280;
+  --color-accent: #6c5ce7;
+  --color-accent-hover: #5a4bd1;
+  --color-border: #e5e7eb;
+  --color-error: #dc2626;
+  --color-subtitle-accent: #c2694b;
+  --color-social-bg: #ffffff;
+  --color-social-text: #1f2937;
+}
+
+/* لما data-theme="dark" يتحط على <html>، القيم دي بتحل محل اللي فوق تلقائياً */
+[data-theme='dark'] {
+  --color-bg: #121212;
+  --color-surface: #1e1e1e;
+  --color-text-primary: #f3f4f6;
+  --color-text-secondary: #9ca3af;
+  --color-accent: #8b7cf6;
+  --color-accent-hover: #7c6ae0;
+  --color-border: #333333;
+  --color-error: #f87171;
+  --color-subtitle-accent: #e0977b;
+  --color-social-bg: #2a2a2a;
+  --color-social-text: #f3f4f6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  /* الانتقال ده بيخلي التبديل بين الوضعين يحصل بسلاسة مش قفشة مفاجئة */
+  transition: background-color 0.2s ease, color 0.2s ease;
+}

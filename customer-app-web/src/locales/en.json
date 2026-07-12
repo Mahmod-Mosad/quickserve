@@ -1,0 +1,26 @@
+{
+  "navbar": {
+    "home": "Home",
+    "search": "Search",
+    "orders": "Orders"
+  },
+  "login": {
+    "heroTitleLine1": "Fresh meals,",
+    "heroTitleLine2": "delivered fast.",
+    "heroSubtitle": "Experience the best local flavors delivered right to your door with QuickServe.",
+    "welcomeBack": "Welcome back",
+    "subtitle": "Please enter your details to sign in.",
+    "emailLabel": "Email",
+    "passwordLabel": "Password",
+    "signIn": "Sign In",
+    "signingIn": "Signing in...",
+    "orContinueWith": "or continue with",
+    "continueWithGoogle": "Continue with Google",
+    "continueWithFacebook": "Continue with Facebook",
+    "dontHaveAccount": "Don't have an account?",
+    "signUp": "Sign Up",
+    "termsAgree": "By signing in, you agree to our",
+    "termsOfService": "Terms of Service",
+    "privacyPolicy": "Privacy Policy"
+  }
+}

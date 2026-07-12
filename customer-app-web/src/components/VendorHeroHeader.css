@@ -1,0 +1,50 @@
+.vendor-hero {
+  position: relative;
+  height: 340px;
+}
+
+.vendor-hero__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.vendor-hero__overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 32px 5%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.75), transparent 70%);
+  color: white;
+}
+
+.vendor-hero__name {
+  font-size: 34px;
+  font-weight: 700;
+  margin: 0 0 10px;
+}
+
+.vendor-hero__badges {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.vendor-hero__badge {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background-color: rgba(255, 255, 255, 0.2);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.vendor-hero__description {
+  font-size: 14px;
+  opacity: 0.9;
+  margin: 0;
+  max-width: 600px;
+}

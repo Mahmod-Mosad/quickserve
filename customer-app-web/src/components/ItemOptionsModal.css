@@ -1,0 +1,126 @@
+.item-modal__backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 20px;
+}
+
+.item-modal {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  max-height: 85vh;
+  overflow-y: auto;
+  background-color: var(--color-surface);
+  border-radius: 16px;
+  padding: 28px;
+}
+
+.item-modal__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: var(--color-bg);
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--color-text-primary);
+}
+
+.item-modal__title {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 6px;
+  color: var(--color-text-primary);
+  padding-right: 30px;
+}
+
+.item-modal__description {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  margin: 0 0 20px;
+}
+
+.item-modal__section {
+  margin-bottom: 20px;
+}
+
+.item-modal__section-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 10px;
+  color: var(--color-text-primary);
+}
+
+.item-modal__option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--color-text-primary);
+  padding: 6px 0;
+  cursor: pointer;
+}
+
+.item-modal__notes {
+  width: 100%;
+  min-height: 60px;
+  padding: 10px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  font-size: 13px;
+  font-family: inherit;
+  resize: vertical;
+}
+
+.item-modal__quantity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.item-modal__quantity button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  background: none;
+  color: var(--color-text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.item-modal__quantity span {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  min-width: 20px;
+  text-align: center;
+}
+
+.item-modal__confirm {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--color-accent);
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
