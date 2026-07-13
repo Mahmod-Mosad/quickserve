@@ -7,18 +7,20 @@ import MenuItemCard from '../../components/MenuItemCard';
 import ItemOptionsModal from '../../components/ItemOptionsModal';
 import CartSummaryBar from '../../components/CartSummaryBar';
 import { useCart } from '../../context/CartContext';
+import { useLanguage } from '../../context/LanguageContext';
 import type { VendorDetails } from '../../types/vendor';
 import type { MenuItem } from '../../types/menuItem';
 import type { CartItem } from '../../types/cart';
 import { getVendorDetails, getMenuItems } from '../../services/vendorService';
 import './VendorMenuPage.css';
 
-function toSectionId(category: string) {
-  return `category-${category.replace(/\s+/g, '-')}`;
+function toSectionId(categoryKey: string) {
+  return `category-${categoryKey}`;
 }
 
 export default function VendorMenuPage() {
   const { vendorId } = useParams<{ vendorId: string }>();
+  const { language, t } = useLanguage();
 
   const [vendor, setVendor] = useState<VendorDetails | null>(null);
   const [menuItems, setMenuItems] = useState<MenuItem[]>([]);
@@ -33,27 +35,27 @@ export default function VendorMenuPage() {
     async function loadData() {
       setIsLoading(true);
       const [vendorData, itemsData] = await Promise.all([
-        getVendorDetails(vendorId!),
-        getMenuItems(vendorId!),
+        getVendorDetails(vendorId!, language),
+        getMenuItems(vendorId!, language),
       ]);
       setVendor(vendorData);
       setMenuItems(itemsData);
       setIsLoading(false);
     }
     loadData();
-  }, [vendorId]);
+  }, [vendorId, language]);
 
   function handleModalConfirm(cartItem: CartItem) {
     if (vendorId) addItem(cartItem, vendorId);
   }
 
-  function handleCategorySelect(category: string) {
-    const section = document.getElementById(toSectionId(category));
+  function handleCategorySelect(categoryKey: string) {
+    const section = document.getElementById(toSectionId(categoryKey));
     section?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
   if (isLoading || !vendor) {
-    return <p className="vendor-menu-page__loading">Loading...</p>;
+    return <p className="vendor-menu-page__loading">{t('vendorMenu.loading')}</p>;
   }
 
   const itemsByCategory = menuItems.reduce<Record<string, MenuItem[]>>((groups, item) => {
@@ -71,9 +73,11 @@ export default function VendorMenuPage() {
         <CategorySidebar onSelect={handleCategorySelect} />
 
         <div className="vendor-menu-page__items">
-          {Object.entries(itemsByCategory).map(([category, items]) => (
-            <section key={category} id={toSectionId(category)} className="vendor-menu-page__category-section">
-              <h2 className="vendor-menu-page__section-title">{category}</h2>
+          {Object.entries(itemsByCategory).map(([categoryKey, items]) => (
+            <section key={categoryKey} id={toSectionId(categoryKey)} className="vendor-menu-page__category-section">
+              <h2 className="vendor-menu-page__section-title">
+                {t(`vendorMenu.categories.${categoryKey}`)}
+              </h2>
               <div className="vendor-menu-page__grid">
                 {items.map((item) => (
                   <MenuItemCard key={item.id} item={item} onAddClick={setSelectedItem} />

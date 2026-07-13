@@ -54,5 +54,31 @@
     "closed": "مقفول",
     "minutesSuffix": "دقيقة",
     "free": "مجاني"
+  },
+  "vendorMenu": {
+    "categories": {
+      "popular": "الأكثر طلباً",
+      "grainBowls": "أطباق الحبوب",
+      "freshSalads": "سلطات طازة",
+      "smoothiesDrinks": "سموذي ومشروبات",
+      "sidesSnacks": "أطباق جانبية"
+    },
+    "size": "الحجم",
+    "extras": "إضافات",
+    "notes": "ملاحظات",
+    "notesPlaceholder": "أي طلبات خاصة؟",
+    "addToCart": "أضف",
+    "toCart": "للسلة",
+    "loading": "جاري التحميل...",
+    "cartItem": "عنصر",
+    "cartItems": "عناصر",
+    "viewCart": "عرض السلة",
+    "veganBadge": "نباتي",
+    "sizeSmall": "صغير",
+    "sizeMedium": "وسط",
+    "sizeLarge": "كبير",
+    "extraCheese": "جبنة إضافية",
+    "extraSauce": "صوص إضافي",
+    "noOnions": "من غير بصل"
   }
 }

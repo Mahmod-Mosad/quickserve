@@ -54,5 +54,31 @@
     "closed": "Closed",
     "minutesSuffix": "min",
     "free": "Free"
+  },
+  "vendorMenu": {
+    "categories": {
+      "popular": "Popular",
+      "grainBowls": "Grain Bowls",
+      "freshSalads": "Fresh Salads",
+      "smoothiesDrinks": "Smoothies & Drinks",
+      "sidesSnacks": "Sides & Snacks"
+    },
+    "size": "Size",
+    "extras": "Extras",
+    "notes": "Notes",
+    "notesPlaceholder": "Any special requests?",
+    "addToCart": "Add",
+    "toCart": "to Cart",
+    "loading": "Loading...",
+    "cartItem": "Item",
+    "cartItems": "Items",
+    "viewCart": "View Cart",
+    "veganBadge": "Vegan",
+    "sizeSmall": "Small",
+    "sizeMedium": "Medium",
+    "sizeLarge": "Large",
+    "extraCheese": "Extra Cheese",
+    "extraSauce": "Extra Sauce",
+    "noOnions": "No Onions"
   }
 }

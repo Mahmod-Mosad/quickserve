@@ -1,31 +1,33 @@
 import { useState } from 'react';
+import { useLanguage } from '../context/LanguageContext';
 import './CategorySidebar.css';
 
-const categories = ['Popular', 'Grain Bowls', 'Fresh Salads', 'Smoothies & Drinks', 'Sides & Snacks'];
+const categoryKeys = ['popular', 'grainBowls', 'freshSalads', 'smoothiesDrinks', 'sidesSnacks'];
 
 interface CategorySidebarProps {
-  onSelect: (category: string) => void;
+  onSelect: (categoryKey: string) => void;
 }
 
 export default function CategorySidebar({ onSelect }: CategorySidebarProps) {
-  const [selected, setSelected] = useState(categories[0]);
+  const [selected, setSelected] = useState(categoryKeys[0]);
+  const { t } = useLanguage();
 
-  function handleClick(category: string) {
-    setSelected(category);
-    onSelect(category);
+  function handleClick(categoryKey: string) {
+    setSelected(categoryKey);
+    onSelect(categoryKey);
   }
 
   return (
     <nav className="category-sidebar">
-      {categories.map((category) => (
+      {categoryKeys.map((key) => (
         <button
-          key={category}
-          onClick={() => handleClick(category)}
+          key={key}
+          onClick={() => handleClick(key)}
           className={`category-sidebar__item ${
-            selected === category ? 'category-sidebar__item--active' : ''
+            selected === key ? 'category-sidebar__item--active' : ''
           }`}
         >
-          {category}
+          {t(`vendorMenu.categories.${key}`)}
         </button>
       ))}
     </nav>

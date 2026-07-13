@@ -1,5 +1,6 @@
 import { Plus } from 'lucide-react';
 import type { MenuItem } from '../types/menuItem';
+import { useLanguage } from '../context/LanguageContext';
 import './MenuItemCard.css';
 
 interface MenuItemCardProps {
@@ -8,11 +9,15 @@ interface MenuItemCardProps {
 }
 
 export default function MenuItemCard({ item, onAddClick }: MenuItemCardProps) {
+  const { t } = useLanguage();
+
   return (
     <div className="menu-item-card">
       <div className="menu-item-card__image-wrapper">
         <img src={item.imageUrl} alt="" className="menu-item-card__image" />
-        {item.badge && <span className="menu-item-card__badge">{item.badge}</span>}
+        {item.badge === 'Vegan' && (
+          <span className="menu-item-card__badge">{t('vendorMenu.veganBadge')}</span>
+        )}
       </div>
 
       <div className="menu-item-card__info">
