@@ -1,9 +1,11 @@
 import { ShoppingCart } from 'lucide-react';
 import { useCart } from '../context/CartContext';
+import { useLanguage } from '../context/LanguageContext';
 import './VendorConflictModal.css';
 
 export default function VendorConflictModal() {
   const { pendingConflict, resolveConflict } = useCart();
+  const { t } = useLanguage();
 
   if (!pendingConflict) return null;
 
@@ -14,17 +16,15 @@ export default function VendorConflictModal() {
           <ShoppingCart size={20} />
         </div>
 
-        <h3 className="vendor-conflict-modal__title">Start a new order?</h3>
-        <p className="vendor-conflict-modal__message">
-          Your cart has items from another restaurant. Adding this item will clear your current cart.
-        </p>
+        <h3 className="vendor-conflict-modal__title">{t('checkout.conflictTitle')}</h3>
+        <p className="vendor-conflict-modal__message">{t('checkout.conflictMessage')}</p>
 
         <div className="vendor-conflict-modal__actions">
           <button onClick={() => resolveConflict(false)} className="vendor-conflict-modal__cancel">
-            Keep cart
+            {t('checkout.keepCart')}
           </button>
           <button onClick={() => resolveConflict(true)} className="vendor-conflict-modal__confirm">
-            Clear cart
+            {t('checkout.clearCart')}
           </button>
         </div>
       </div>

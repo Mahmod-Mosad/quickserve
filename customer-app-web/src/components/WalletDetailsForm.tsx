@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useLanguage } from '../context/LanguageContext';
 import './WalletDetailsForm.css';
 
 export interface WalletDetails {
@@ -10,6 +11,7 @@ interface WalletDetailsFormProps {
 }
 
 export default function WalletDetailsForm({ onChange }: WalletDetailsFormProps) {
+  const { t } = useLanguage();
   const [details, setDetails] = useState<WalletDetails>({ walletPhoneNumber: '' });
 
   function updateField(value: string) {
@@ -21,7 +23,7 @@ export default function WalletDetailsForm({ onChange }: WalletDetailsFormProps) 
   return (
     <div className="wallet-details-form">
       <label className="wallet-details-form__field">
-        <span>Wallet Phone Number</span>
+        <span>{t('checkout.walletPhoneNumber')}</span>
         <input
           type="tel"
           value={details.walletPhoneNumber}

@@ -7,11 +7,13 @@ import CardDetailsForm, { type CardDetails } from '../../components/CardDetailsF
 import WalletDetailsForm, { type WalletDetails } from '../../components/WalletDetailsForm';
 import OrderSummary from '../../components/OrderSummary';
 import { useCart } from '../../context/CartContext';
+import { useLanguage } from '../../context/LanguageContext';
 import type { Address } from '../../types/address';
 import './CheckoutPage.css';
 
 export default function CheckoutPage() {
   const { items, updateQuantity, removeItem, totalPrice, clearCart } = useCart();
+  const { t } = useLanguage();
 
   const [address, setAddress] = useState<Address | null>(null);
   const [paymentMethod, setPaymentMethod] = useState<PaymentMethod>('card');
@@ -37,14 +39,14 @@ export default function CheckoutPage() {
       <Navbar />
 
       <div className="checkout-page__content">
-        <h1 className="checkout-page__title">Checkout</h1>
+        <h1 className="checkout-page__title">{t('checkout.title')}</h1>
 
         <div className="checkout-page__layout">
           <div className="checkout-page__main">
             <section className="checkout-page__section">
-              <h2 className="checkout-page__section-title">Your Order</h2>
+              <h2 className="checkout-page__section-title">{t('checkout.yourOrder')}</h2>
               {items.length === 0 ? (
-                <p className="checkout-page__empty">Your cart is empty.</p>
+                <p className="checkout-page__empty">{t('checkout.emptyCart')}</p>
               ) : (
                 items.map((item) => (
                   <CartItemRow
@@ -59,14 +61,14 @@ export default function CheckoutPage() {
             </section>
 
             <section className="checkout-page__section">
-              <h2 className="checkout-page__section-title">Delivery Address</h2>
+              <h2 className="checkout-page__section-title">{t('checkout.deliveryAddress')}</h2>
               <AddressForm onChange={setAddress} />
             </section>
           </div>
 
           <div className="checkout-page__side">
             <section className="checkout-page__section">
-              <h2 className="checkout-page__section-title">Payment Method</h2>
+              <h2 className="checkout-page__section-title">{t('checkout.paymentMethod')}</h2>
               <PaymentMethodSelector selected={paymentMethod} onChange={setPaymentMethod} />
               {paymentMethod === 'card' && <CardDetailsForm onChange={setCardDetails} />}
               {paymentMethod === 'wallet' && <WalletDetailsForm onChange={setWalletDetails} />}
@@ -79,7 +81,7 @@ export default function CheckoutPage() {
               disabled={!canPlaceOrder}
               className="checkout-page__place-order"
             >
-              Place Order
+              {t('checkout.placeOrder')}
             </button>
           </div>
         </div>

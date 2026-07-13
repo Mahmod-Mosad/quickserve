@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useLanguage } from '../context/LanguageContext';
 import './CardDetailsForm.css';
 
 export interface CardDetails {
@@ -13,6 +14,7 @@ interface CardDetailsFormProps {
 }
 
 export default function CardDetailsForm({ onChange }: CardDetailsFormProps) {
+  const { t } = useLanguage();
   const [details, setDetails] = useState<CardDetails>({
     cardNumber: '',
     expiry: '',
@@ -29,17 +31,17 @@ export default function CardDetailsForm({ onChange }: CardDetailsFormProps) {
   return (
     <div className="card-details-form">
       <label className="card-details-form__field card-details-form__field--full">
-        <span>Cardholder Name</span>
+        <span>{t('checkout.cardholderName')}</span>
         <input
           type="text"
           value={details.cardholderName}
           onChange={(e) => updateField('cardholderName', e.target.value)}
-          placeholder="Name on card"
+          placeholder={t('checkout.cardholderPlaceholder')}
         />
       </label>
 
       <label className="card-details-form__field card-details-form__field--full">
-        <span>Card Number</span>
+        <span>{t('checkout.cardNumber')}</span>
         <input
           type="text"
           value={details.cardNumber}
@@ -50,7 +52,7 @@ export default function CardDetailsForm({ onChange }: CardDetailsFormProps) {
       </label>
 
       <label className="card-details-form__field">
-        <span>Expiry (MM/YY)</span>
+        <span>{t('checkout.expiry')}</span>
         <input
           type="text"
           value={details.expiry}
@@ -61,7 +63,7 @@ export default function CardDetailsForm({ onChange }: CardDetailsFormProps) {
       </label>
 
       <label className="card-details-form__field">
-        <span>CVV</span>
+        <span>{t('checkout.cvv')}</span>
         <input
           type="text"
           value={details.cvv}
