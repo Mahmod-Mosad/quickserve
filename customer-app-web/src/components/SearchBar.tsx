@@ -1,9 +1,11 @@
 import { Search } from 'lucide-react';
 import { useState } from 'react';
+import { useLanguage } from '../context/LanguageContext';
 import './SearchBar.css';
 
 export default function SearchBar() {
   const [searchTerm, setSearchTerm] = useState('');
+  const { t } = useLanguage();
 
   function handleChange(value: string) {
     setSearchTerm(value);
@@ -17,7 +19,7 @@ export default function SearchBar() {
         type="text"
         value={searchTerm}
         onChange={(e) => handleChange(e.target.value)}
-        placeholder="Search for restaurants, cuisines, or dishes"
+        placeholder={t('home.searchPlaceholder')}
         className="search-bar__input"
       />
     </div>

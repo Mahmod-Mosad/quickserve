@@ -22,5 +22,37 @@
     "termsAgree": "بتسجيل الدخول، إنت موافق على",
     "termsOfService": "شروط الاستخدام",
     "privacyPolicy": "سياسة الخصوصية"
+  },
+  "home": {
+    "searchPlaceholder": "دور على مطاعم، مطابخ، أو أكلات",
+    "categories": {
+      "pizza": "بيتزا",
+      "burgers": "برجر",
+      "groceries": "بقالة",
+      "healthy": "صحي",
+      "desserts": "حلويات",
+      "coffee": "قهوة"
+    },
+    "filters": {
+      "title": "الفلاتر",
+      "openNow": "مفتوح دلوقتي",
+      "freeDelivery": "توصيل مجاني",
+      "topRated": "الأعلى تقييماً",
+      "priceRange": "نطاق السعر",
+      "min": "أقل",
+      "max": "أكتر"
+    },
+    "sort": {
+      "recommended": "الأكثر ترشيحاً",
+      "topRated": "الأعلى تقييماً",
+      "fastestDelivery": "الأسرع توصيلاً",
+      "priceLowToHigh": "السعر: من الأقل للأعلى",
+      "prefix": "ترتيب حسب"
+    },
+    "restaurantsTitle": "المطاعم",
+    "loading": "جاري تحميل المطاعم...",
+    "closed": "مقفول",
+    "minutesSuffix": "دقيقة",
+    "free": "مجاني"
   }
 }

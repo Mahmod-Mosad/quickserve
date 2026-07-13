@@ -1,5 +1,6 @@
 import { Star, Clock, Bike } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { useLanguage } from '../context/LanguageContext';
 import type { Restaurant } from '../types/restaurant';
 import './RestaurantCard.css';
 
@@ -9,6 +10,7 @@ interface RestaurantCardProps {
 
 export default function RestaurantCard({ restaurant }: RestaurantCardProps) {
   const navigate = useNavigate();
+  const { t } = useLanguage();
 
   function handleClick() {
     navigate(`/vendor/${restaurant.id}`);
@@ -20,7 +22,9 @@ export default function RestaurantCard({ restaurant }: RestaurantCardProps) {
         <img src={restaurant.imageUrl} alt="" className="restaurant-card__image" />
 
         {!restaurant.isOpen && (
-          <span className="restaurant-card__badge restaurant-card__badge--closed">Closed</span>
+          <span className="restaurant-card__badge restaurant-card__badge--closed">
+            {t('home.closed')}
+          </span>
         )}
         {restaurant.isOpen && restaurant.discountPercent && (
           <span className="restaurant-card__badge restaurant-card__badge--discount">
@@ -43,11 +47,11 @@ export default function RestaurantCard({ restaurant }: RestaurantCardProps) {
         <div className="restaurant-card__meta">
           <span className="restaurant-card__meta-item">
             <Clock size={13} />
-            {restaurant.deliveryTimeMinutes} min
+            {restaurant.deliveryTimeMinutes} {t('home.minutesSuffix')}
           </span>
           <span className="restaurant-card__meta-item">
             <Bike size={13} />
-            {restaurant.deliveryFee === 'free' ? 'Free' : `$${restaurant.deliveryFee.toFixed(2)}`}
+            {restaurant.deliveryFee === 'free' ? t('home.free') : `$${restaurant.deliveryFee.toFixed(2)}`}
           </span>
         </div>
       </div>

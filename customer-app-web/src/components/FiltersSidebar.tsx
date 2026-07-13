@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useLanguage } from '../context/LanguageContext';
 import './FiltersSidebar.css';
 
 export default function FiltersSidebar() {
@@ -7,6 +8,7 @@ export default function FiltersSidebar() {
   const [topRated, setTopRated] = useState(false);
   const [minPrice, setMinPrice] = useState('');
   const [maxPrice, setMaxPrice] = useState('');
+  const { t } = useLanguage();
 
   function logFilters() {
     console.log({ openNow, freeDelivery, topRated, minPrice, maxPrice });
@@ -14,7 +16,7 @@ export default function FiltersSidebar() {
 
   return (
     <aside className="filters-sidebar">
-      <h3 className="filters-sidebar__title">Filters</h3>
+      <h3 className="filters-sidebar__title">{t('home.filters.title')}</h3>
 
       <label className="filters-sidebar__checkbox">
         <input
@@ -25,7 +27,7 @@ export default function FiltersSidebar() {
             logFilters();
           }}
         />
-        Open Now
+        {t('home.filters.openNow')}
       </label>
 
       <label className="filters-sidebar__checkbox">
@@ -37,7 +39,7 @@ export default function FiltersSidebar() {
             logFilters();
           }}
         />
-        Free Delivery
+        {t('home.filters.freeDelivery')}
       </label>
 
       <label className="filters-sidebar__checkbox">
@@ -49,18 +51,18 @@ export default function FiltersSidebar() {
             logFilters();
           }}
         />
-        Top Rated
+        {t('home.filters.topRated')}
       </label>
 
       <div className="filters-sidebar__price">
-        <span className="filters-sidebar__label">Price Range</span>
+        <span className="filters-sidebar__label">{t('home.filters.priceRange')}</span>
         <div className="filters-sidebar__price-inputs">
           <input
             type="number"
             min="0"
             value={minPrice}
             onChange={(e) => setMinPrice(e.target.value)}
-            placeholder="Min"
+            placeholder={t('home.filters.min')}
             className="filters-sidebar__price-input"
           />
           <span>—</span>
@@ -69,7 +71,7 @@ export default function FiltersSidebar() {
             min="0"
             value={maxPrice}
             onChange={(e) => setMaxPrice(e.target.value)}
-            placeholder="Max"
+            placeholder={t('home.filters.max')}
             className="filters-sidebar__price-input"
           />
         </div>

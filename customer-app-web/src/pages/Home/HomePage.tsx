@@ -6,11 +6,13 @@ import PromoBanner from '../../components/PromoBanner';
 import FiltersSidebar from '../../components/FiltersSidebar';
 import SortDropdown from '../../components/SortDropdown';
 import RestaurantCard from '../../components/RestaurantCard';
+import { useLanguage } from '../../context/LanguageContext';
 import type { Restaurant } from '../../types/restaurant';
 import { getRestaurants } from '../../services/restaurantService';
 import './HomePage.css';
 
 export default function HomePage() {
+  const { t } = useLanguage();
   const [restaurants, setRestaurants] = useState<Restaurant[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -41,7 +43,7 @@ export default function HomePage() {
           </div>
 
           {isLoading ? (
-            <p className="home-page__loading">Loading restaurants...</p>
+            <p className="home-page__loading">{t('home.loading')}</p>
           ) : (
             <div className="home-page__restaurants-grid">
               {restaurants.map((restaurant) => (

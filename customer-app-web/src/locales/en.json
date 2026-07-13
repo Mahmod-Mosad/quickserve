@@ -22,5 +22,37 @@
     "termsAgree": "By signing in, you agree to our",
     "termsOfService": "Terms of Service",
     "privacyPolicy": "Privacy Policy"
+  },
+  "home": {
+    "searchPlaceholder": "Search for restaurants, cuisines, or dishes",
+    "categories": {
+      "pizza": "Pizza",
+      "burgers": "Burgers",
+      "groceries": "Groceries",
+      "healthy": "Healthy",
+      "desserts": "Desserts",
+      "coffee": "Coffee"
+    },
+    "filters": {
+      "title": "Filters",
+      "openNow": "Open Now",
+      "freeDelivery": "Free Delivery",
+      "topRated": "Top Rated",
+      "priceRange": "Price Range",
+      "min": "Min",
+      "max": "Max"
+    },
+    "sort": {
+      "recommended": "Recommended",
+      "topRated": "Top Rated",
+      "fastestDelivery": "Fastest Delivery",
+      "priceLowToHigh": "Price: Low to High",
+      "prefix": "Sort By"
+    },
+    "restaurantsTitle": "Restaurants",
+    "loading": "Loading restaurants...",
+    "closed": "Closed",
+    "minutesSuffix": "min",
+    "free": "Free"
   }
 }

@@ -1,20 +1,24 @@
 import { useEffect, useState } from 'react';
 import type { PromoBanner as PromoBannerType } from '../types/promo';
 import { getActivePromoBanner } from '../services/promoService';
+import { useLanguage } from '../context/LanguageContext';
 import './PromoBanner.css';
 
 export default function PromoBanner() {
   const [banner, setBanner] = useState<PromoBannerType | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const { language } = useLanguage();
 
   useEffect(() => {
     async function loadBanner() {
-      const data = await getActivePromoBanner();
+      setIsLoading(true);
+      const data = await getActivePromoBanner(language);
       setBanner(data);
       setIsLoading(false);
     }
     loadBanner();
-  }, []);
+    // الاعتماد على [language] بيخلي البانر يتجاب تاني بلغة جديدة كل مرة اليوزر يبدّل اللغة
+  }, [language]);
 
   if (isLoading || !banner) {
     return <div className="promo-banner promo-banner--loading" />;

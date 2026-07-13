@@ -1,10 +1,12 @@
 import { useState } from 'react';
+import { useLanguage } from '../context/LanguageContext';
 import './SortDropdown.css';
 
-const sortOptions = ['Recommended', 'Top Rated', 'Fastest Delivery', 'Price: Low to High'];
+const sortKeys = ['recommended', 'topRated', 'fastestDelivery', 'priceLowToHigh'];
 
 export default function SortDropdown() {
-  const [selected, setSelected] = useState(sortOptions[0]);
+  const [selected, setSelected] = useState(sortKeys[0]);
+  const { t } = useLanguage();
 
   function handleChange(value: string) {
     setSelected(value);
@@ -17,9 +19,9 @@ export default function SortDropdown() {
       onChange={(e) => handleChange(e.target.value)}
       className="sort-dropdown"
     >
-      {sortOptions.map((option) => (
-        <option key={option} value={option}>
-          Sort By: {option}
+      {sortKeys.map((key) => (
+        <option key={key} value={key}>
+          {t('home.sort.prefix')}: {t(`home.sort.${key}`)}
         </option>
       ))}
     </select>
