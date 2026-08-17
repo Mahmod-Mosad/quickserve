@@ -82,6 +82,7 @@
     "noOnions": "No Onions"
   },
   "checkout": {
+    "pinLocationLabel": "Pin Your Location (optional)",
     "title": "Checkout",
     "yourOrder": "Your Order",
     "emptyCart": "Your cart is empty.",
@@ -118,5 +119,20 @@
     "conflictMessage": "Your cart has items from another restaurant. Adding this item will clear your current cart.",
     "keepCart": "Keep cart",
     "clearCart": "Clear cart"
+  },
+  "orderTracking": {
+    "estimatedArrival": "Estimated Arrival",
+    "minutesSuffix": "mins",
+    "deliveredTitle": "Delivered! Enjoy your meal 🎉",
+    "stages": {
+      "confirmed": "Order Confirmed",
+      "preparing": "Preparing",
+      "out_for_delivery": "Out for Delivery",
+      "delivered": "Delivered"
+    },
+    "deliveries": "deliveries",
+    "nextStageDev": "Next Stage (dev)",
+    "yourOrder": "Your Order",
+    "reportProblem": "Report a Problem"
   }
 }

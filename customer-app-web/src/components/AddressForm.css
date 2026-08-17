@@ -3,6 +3,17 @@
   flex-direction: column;
   gap: 16px;
 }
+.address-form__map-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.address-form__map-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
 
 .address-form__labels {
   display: flex;

@@ -10,11 +10,12 @@ import { useCart } from '../../context/CartContext';
 import { useLanguage } from '../../context/LanguageContext';
 import type { Address } from '../../types/address';
 import './CheckoutPage.css';
-
+import { useNavigate } from 'react-router-dom';
+import { saveOrder } from '../../services/orderStore';
 export default function CheckoutPage() {
   const { items, updateQuantity, removeItem, totalPrice, clearCart } = useCart();
   const { t } = useLanguage();
-
+  const navigate = useNavigate();
   const [address, setAddress] = useState<Address | null>(null);
   const [paymentMethod, setPaymentMethod] = useState<PaymentMethod>('card');
   const [cardDetails, setCardDetails] = useState<CardDetails | null>(null);
@@ -31,7 +32,11 @@ export default function CheckoutPage() {
       walletDetails,
       total: totalPrice,
     });
+
+    const orderId = crypto.randomUUID();
+    saveOrder({ orderId, items, total: totalPrice });
     clearCart();
+    navigate(`/order-tracking/${orderId}`);
   }
 
   return (

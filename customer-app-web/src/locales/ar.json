@@ -82,6 +82,7 @@
     "noOnions": "من غير بصل"
   },
   "checkout": {
+    "pinLocationLabel": "حدد موقعك على الخريطة (اختياري)",
     "title": "إتمام الطلب",
     "yourOrder": "طلبك",
     "emptyCart": "السلة فاضية.",
@@ -118,5 +119,20 @@
     "conflictMessage": "السلة فيها أصناف من مطعم تاني. إضافة الصنف ده هتمسح السلة الحالية.",
     "keepCart": "خلي السلة",
     "clearCart": "امسح السلة"
+  },
+  "orderTracking": {
+    "estimatedArrival": "الوصول المتوقع",
+    "minutesSuffix": "دقيقة",
+    "deliveredTitle": "تم التوصيل! بالهنا والشفا 🎉",
+    "stages": {
+      "confirmed": "تم تأكيد الطلب",
+      "preparing": "قيد التحضير",
+      "out_for_delivery": "في الطريق",
+      "delivered": "تم التوصيل"
+    },
+    "deliveries": "توصيلة",
+    "nextStageDev": "المرحلة الجاية (تجربة)",
+    "yourOrder": "طلبك",
+    "reportProblem": "الإبلاغ عن مشكلة"
   }
 }

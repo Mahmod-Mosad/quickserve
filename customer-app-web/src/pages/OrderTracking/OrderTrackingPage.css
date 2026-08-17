@@ -1,0 +1,66 @@
+.order-tracking-page {
+  min-height: 100vh;
+  background-color: var(--color-bg);
+}
+
+.order-tracking-page__content {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 24px 5% 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.order-tracking-page__grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.order-tracking-page__card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 24px 20px;
+}
+
+.order-tracking-page__dev-button {
+  padding: 10px;
+  border: 1px dashed var(--color-border);
+  border-radius: 10px;
+  background: none;
+  color: var(--color-text-secondary);
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.order-tracking-page__card-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0 0 12px;
+}
+
+.order-tracking-page__order-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  padding: 6px 0;
+}
+
+.order-tracking-page__report-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  border: 1px solid var(--color-error);
+  border-radius: 10px;
+  background: none;
+  color: var(--color-error);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}

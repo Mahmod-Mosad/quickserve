@@ -5,6 +5,7 @@ import LoginPage from './pages/Login/LoginPage';
 import HomePage from './pages/Home/HomePage';
 import VendorMenuPage from './pages/VendorMenu/VendorMenuPage';
 import CheckoutPage from './pages/Checkout/CheckoutPage';
+import OrderTrackingPage from './pages/OrderTracking/OrderTrackingPage';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/vendor/:vendorId" element={<VendorMenuPage />} />
         <Route path="/checkout" element={<CheckoutPage />} />
+        <Route path="/order-tracking/:orderId" element={<OrderTrackingPage />} />
       </Routes>
     </CartProvider>
   );

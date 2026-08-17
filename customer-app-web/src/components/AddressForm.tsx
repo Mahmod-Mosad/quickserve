@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import type { Address } from '../types/address';
 import { useLanguage } from '../context/LanguageContext';
+import LocationPicker, { type Coordinates } from './LocationPicker';
 import './AddressForm.css';
 
 interface AddressFormProps {
@@ -21,12 +22,17 @@ export default function AddressForm({ onChange }: AddressFormProps) {
     street: '',
     apartment: '',
     instructions: '',
+    coordinates: null,
   });
 
   function updateField<K extends keyof Address>(field: K, value: Address[K]) {
     const updated = { ...address, [field]: value };
     setAddress(updated);
     onChange(updated);
+  }
+
+  function handleLocationChange(coords: Coordinates) {
+    updateField('coordinates', coords);
   }
 
   return (
@@ -84,6 +90,11 @@ export default function AddressForm({ onChange }: AddressFormProps) {
             placeholder={t('checkout.instructionsPlaceholder')}
           />
         </label>
+      </div>
+
+      <div className="address-form__map-section">
+        <span className="address-form__map-label">{t('checkout.pinLocationLabel')}</span>
+        <LocationPicker value={address.coordinates} onChange={handleLocationChange} />
       </div>
     </div>
   );
